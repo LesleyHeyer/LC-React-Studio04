@@ -6,11 +6,19 @@ import "./App.css";
 function App() {
 
     // TODO: Create a state variable to hold the five numbers to track. This should be an object with five properties: steps, water, food, exercise, and net. They should each be initialized with with a zero value (as a number).  Notice the hook you need has been imported at the top.
+    const [data, setData] = useState({
+        steps: 0,
+        water: 0,
+        food: 0,
+        exercise: 0,
+        net: 0
+    });
 
 
     // TODO: Create a state variable to track which tab should be displayed.
     // Initialize it to the string "net".
     
+    const [tab, setTab] = useState('net');
 
     // TODO: Inside each of the following handlers, update the corresponding numbers property from state.
     const handleUpdateSteps = (amount) => {
@@ -45,7 +53,7 @@ function App() {
             </header>
 
             {/* TODO: Pass the numbers object into the Chart component as a prop */}
-            <Chart />
+            <Chart numbers={data} />
 
             <div className="tabs-container">
                 <div
@@ -86,7 +94,7 @@ function App() {
             
             {/* TODO: Pass the current type into the Details component */}
             {/* TODO: Pass the four update handler functions to the Details component below. Check the propTypes object at the bottom of Details.js to get the prop names, then look just below the state variables in this file to get the names of the handler functions. */}
-            <Details />
+            <Details type={tab} />
             
         </div>
     );
