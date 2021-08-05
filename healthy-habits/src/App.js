@@ -41,7 +41,7 @@ function App() {
     // TODO: Change the current type of details to be displayed.
     const handleCurrTypeChange = (type) => {
         // Use the setter from state.
-        
+        setTab(type);
     };
 
     // JSX to display all content on page
